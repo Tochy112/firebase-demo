@@ -2,11 +2,18 @@ import "./App.css";
 import AuthPage from "./components/AuthPage";
 import { Route, useLocation, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
+
+
 function App() {
-  const location = useLocation()
+  const location = useLocation();
+
   return (
     <>
-      {location.pathname === "/dashboard" ? <h1>Dashboard</h1> : <h1>Firebase Demo</h1>}
+      {location.pathname === "/dashboard" ? (
+        <h1>Dashboard</h1>
+      ) : (
+        <h1>Firebase Demo</h1>
+      )}
       <div>
         <Routes>
           <Route path="/" element={<AuthPage />} />
