@@ -51,6 +51,7 @@ const Dashboard = () => {
         title: newMovieTitle,
         releaseDate: newRealeaseDate,
         gotAnOscar: newMovieOscar,
+        userId: auth?.currentUser?.uid
       });
       window.alert(" New movie created");
       setNewMovieTitle("");
@@ -71,8 +72,8 @@ const Dashboard = () => {
 
   // update movie
   const updateMovie = async (id) => {
-    const movieDoc = doc(db, "movies", id);
-    await updateDoc(movieDoc, { title: updateMovieTitle });
+    const movieDoc2 = doc(db, "movies", id);
+    await updateDoc(movieDoc2, { title: updateMovieTitle });
     getMovies();
   };
 
